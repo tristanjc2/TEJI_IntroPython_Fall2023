@@ -147,3 +147,15 @@ milky = Cow("Milky White")
 milky.speak()
 """
 
+class Repository:
+    def __init__(self):
+        self.packages = {}
+    def add_packages(self, package):
+        self.packages[package.name] = package
+    def remove_packages(self, package):
+        self.packages[package.name] = package
+    def total_size(self):
+        result = 0
+        for package in self.package.values():
+            result += package.size
+        return result
