@@ -146,7 +146,7 @@ class Cow(Animal):
 milky = Cow("Milky White")
 milky.speak()
 """
-
+"""
 class Repository:
     def __init__(self):
         self.packages = {}
@@ -159,3 +159,18 @@ class Repository:
         for package in self.package.values():
             result += package.size
         return result
+"""
+"""
+# If the txt file was spider.txt
+
+file = open("spider.txt")
+print(file.readline())
+print(file.readline())
+print(file.read())
+file.close()
+"""
+"""
+with open("spider.txt") as file:
+    for line in file:
+        print(line.upper())
+"""

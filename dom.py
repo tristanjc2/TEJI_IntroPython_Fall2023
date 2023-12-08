@@ -1,4 +1,5 @@
 import tkinter
+from tkinter import *
 from tkinter import ttk
 from tkinter import messagebox
 
@@ -51,6 +52,44 @@ ttk.Button(window, text="Calculate BMI", command=calculate).grid(row=3, column=1
 # Add a way to display different options.
 # Allow user to choose what they'd like to do.
 
+# Change the label text 
+def show(): 
+    label.config( text = choices[0] )
+    if clicked.get() == "Underweight":
+        print(choices[0])
+
+choices = [
+    "If you're underweight you have two options, eat or eat.",
+    "If you're normal weight etc."
+]
+
+# Dropdown menu options 
+options = [ 
+    "Underweight", 
+    "Tuesday", 
+    "Wednesday", 
+    "Thursday", 
+    "Friday", 
+    "Saturday", 
+    "Sunday"
+] 
+  
+# datatype of menu text 
+clicked = StringVar() 
+  
+# initial menu text 
+clicked.set( "BMI outcomes." ) 
+  
+# Create Dropdown menu 
+drop = OptionMenu( window , clicked , *options ) 
+drop.grid(row=6,column=1) 
+  
+# Create button, it will change label text 
+button = Button( window , text = " " , command = show ).grid(row=7,column=1) 
+  
+# Create Label 
+label = Label( window , text = " " ) 
+label.grid(row=8,column=1)  
 
 
 
