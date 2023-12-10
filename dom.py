@@ -1,3 +1,4 @@
+
 import tkinter
 from tkinter import *
 from tkinter import ttk
@@ -67,7 +68,7 @@ choices = [
 options = [ 
     "Underweight", 
     "Tuesday", 
-    "Wednesday", 
+    "Wednesdaya", 
     "Thursday", 
     "Friday", 
     "Saturday", 
@@ -91,6 +92,71 @@ button = Button( window , text = " " , command = show ).grid(row=7,column=1)
 label = Label( window , text = " " ) 
 label.grid(row=8,column=1)  
 
+class Table:
+     
+    def __init__(self,root):
+         
+        # code for creating table
+        for i in range(total_rows):
+            for j in range(total_columns):
+                 
+                self.e = Entry(root, width=20, fg='blue',
+                               font=('Arial',16,'bold'))
+                 
+                self.e.grid(row=i, column=j)
+                self.e.insert(END, lst[i][j])
+ 
+# take the data
+lst = [((), "BMI", "Weight Status"),
+       (1,'Less than 18.5','Underweight',19),
+       (2,'between 18.5 and 24.9','Normal Weight',18),
+       (3,'between 24.9 and 29.9','Underweight',20),
+       (4,'Over 30','Obese',21)]
+ 
+# find total number of rows and
+# columns in list
+total_rows = len(lst)
+total_columns = len(lst[0])
+ 
+# create root window
+
+t = Table(window)
 
 
 window.mainloop()
+
+"""
+from tkinter import *
+ 
+ 
+class Table:
+     
+    def __init__(self,root):
+         
+        # code for creating table
+        for i in range(total_rows):
+            for j in range(total_columns):
+                 
+                self.e = Entry(root, width=20, fg='blue',
+                               font=('Arial',16,'bold'))
+                 
+                self.e.grid(row=i, column=j)
+                self.e.insert(END, lst[i][j])
+ 
+# take the data
+lst = [((), "BMI", "Weight Status"),
+       (1,'Less than 18.5','Underweight',19),
+       (2,'between 18.5 and 24.9','Normal Weight',18),
+       (3,'between 24.9 and 29.9','Underweight',20),
+       (4,'Over 30','Obese',21)]
+ 
+# find total number of rows and
+# columns in list
+total_rows = len(lst)
+total_columns = len(lst[0])
+ 
+# create root window
+root = Tk()
+t = Table(root)
+root.mainloop()
+"""
